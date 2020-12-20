@@ -1,0 +1,68 @@
+<SnackListWindow>:
+    BackGroundImage
+    GridLayout:
+        cols: 1
+        size_hint: 1,1
+
+        GridLayout:
+            cols: 3
+            size_hint: .3,.1
+            GridLayout:
+                cols: 2
+                background_color: (0/255, 0/255, 0/255, 1)
+                opacity: 0.9
+                canvas.before:
+                    Color:
+                        rgba: self.background_color
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+                CheckBox:
+                    size_hint: 0.1, 0.2
+
+                Label:
+                    text: 'By rating'
+
+
+            GridLayout:
+                cols: 2
+                background_color: (0/255, 0/255, 0/255, 1)
+                opacity: 0.9
+                canvas.before:
+                    Color:
+                        rgba: self.background_color
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+                CheckBox:
+                    size_hint: 0.2, 0.2
+
+                Label:
+                    text: 'By time for preparing'
+
+
+
+        ScrollView:
+            pos_hint: {"top": 1, "left": 1}
+            size_hint: 1, 1
+            do_scroll_y: True
+            GridLayout:
+                # banner_grid_for_list
+                id: banner_grid_for_list
+                opacity: 0.9
+                cols: 1
+                spacing: 10,10
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: '100dp'
+                row_force_default: True
+
+
+        AnchorLayout:
+            size_hint: 0.16, 0.16
+            TextInput:
+                multiline: False
+
+        BackButton

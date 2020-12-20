@@ -1,0 +1,95 @@
+#:include kv/firstwindow.kv
+#:include kv/betweensectionswindow.kv
+#:include kv/registerwindow.kv
+#:include kv/userwindow.kv
+#:include kv/signinwindow.kv
+#:include kv/betweensubsectionsreceptwindow.kv
+#:include kv/boozelistwindow.kv
+#:include kv/boozepagewindow.kv
+#:include kv/establishmentlistwindow.kv
+#:include kv/establishmentpagewindow.kv
+#:include kv/snackpagewindow.kv
+#:include kv/snacklistwindow.kv
+
+
+
+
+GridLayout:
+    cols: 1
+    WindowManager:
+        id: window_manager
+
+        FirstWindow:
+            name: "first_window"
+            id: first_window
+
+        BetweenSectionsWindow:
+            name: "between_section_window"
+            id: between_section_window
+
+        BetweenSubsectionsReceptWindow:
+            name: "between_subsections_recept_window"
+            id: between_subsections_recept_window
+
+        RegisterWindow:
+            name: "register_window"
+            id: register_window
+
+        SignInWindow:
+            name: "sign_in_window"
+            id: sign_in_window
+
+        UserWindow:
+            name: "user_window"
+            id: user_window
+
+        BoozeListWindow:
+            name: "booze_list_window"
+            id: booze_list_window
+
+        BoozePageWindow:
+            name: "booze_page_window"
+            id: booze_page_window
+
+        SnackListWindow:
+            name: "snack_list_window"
+            id: snack_list_window
+
+        SnackPageWindow:
+            name: "snack_page_window"
+            id: snack_page_window
+
+        EstablishmentListWindow:
+            name: "establishment_list_window"
+            id: establishment_list_window
+
+        EstablishmentPageWindow:
+            name: "establishment_page_window"
+            id: establishment_page_window
+
+
+
+
+
+<BackGroundImage>:
+    canvas:
+        Rectangle:
+            source: 'images/fon_for_ mobile.jpg'
+            size: self.size
+            pos: self.pos
+
+
+
+<ColorTextInButton@Button>
+    bold: True
+    italic: True
+    outline_color: 126/255, 5/255, 0/255, 1
+    outline_width: 3
+    color: (0, 1, 0, 1)
+
+
+<BackButton@ColorTextInButton>
+    size_hint: 0.2, 0.2
+    text: "Back"
+    on_release:
+        app.change_screen("first_window")

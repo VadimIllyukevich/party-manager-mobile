@@ -1,0 +1,36 @@
+<BetweenSubsectionsReceptWindow>:
+    BackGroundImage
+    ContainerForBetweenSubsectionsReceptWindow
+
+<ContainerForBetweenSubsectionsReceptWindow>
+    orientation: "vertical"
+    BoxLayout:
+        size_hint: 0.2, 1
+        orientation: "vertical"
+
+
+
+    ColorTextInButton:
+        text:'Booze'
+        font_size: 30
+        opacity: 0.9
+        size_hint: 1, 0.3
+        pos_hint: {'center_x' : 0.5 ,'top' : 0.5}
+        on_release:
+            app.change_screen("booze_list_window")
+
+    ColorTextInButton:
+        text:'snacks'
+        font_size: 30
+        size_hint: 1, 0.3
+        pos_hint: {'center_x' : 0.5 ,'top' : 0.5}
+        opacity: 0.9
+        color: (0, 1, 0, 1)
+        on_release:
+            app.change_screen("snack_list_window")
+
+
+
+
+    BoxLayout:
+        size_hint: 0.2, 1

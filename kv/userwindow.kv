@@ -1,0 +1,48 @@
+<UserWindow>:
+    BackGroundImage
+    GridLayout:
+        cols: 1
+        size_hint: 1,1
+
+        GridLayout:
+            cols: 1
+            size_hint: .4,.4
+            ImageButton:
+                source: "images/avatar.png"
+                id: avatar_image
+                on_release:
+                    print('Lox')
+
+        LabelButton:
+            size_hint: 0.2, 0.2
+            outline_color: 126/255, 5/255, 0/255, 1
+            outline_width: 3
+            color: (0, 1, 0, 1)
+            text:"liked establishment"
+            on_release:
+                print('Lox')
+            # для экспорта текста
+            # id: streak_label
+            # streak_label = self.root.ids['user_window'].ids['streak_label']
+            # streak_label.text = data['users']['1']['label']
+
+        ScrollView:
+            pos_hint: {"top": 1, "left": 1}
+            size_hint: 1, 1
+            do_scroll_y: True
+            GridLayout:
+                # Banner grid
+                id: banner_grid
+                opacity: 0.9
+                cols: 1
+                spacing: 10,10
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: '100dp'
+                row_force_default: True
+
+
+        BackButton
+
+
+

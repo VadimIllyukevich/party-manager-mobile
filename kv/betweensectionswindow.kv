@@ -1,0 +1,45 @@
+<BetweenSectionsWindow>:
+
+    BackGroundImage
+    ContainerForBetweenSectionsWindow
+
+<ContainerForBetweenSectionsWindow>:
+    id: container_for_register_window
+    orientation: "vertical"
+
+    BoxLayout:
+        size_hint: 1,1
+        AnchorLayout:
+            anchor_x: "right"
+            anchor_y: "top"
+            ImageButton:
+                size_hint: 0.2,0.4
+                source: "images/avatar.png"
+                id: avatar_image
+                on_release:
+                    app.change_screen("user_window")
+
+    BoxLayout:
+        orientation: "vertical"
+        ColorTextInButton:
+            text:'Will hang out'
+            font_size: 30
+            opacity: 0.9
+            size_hint: 1, 0.1
+            pos_hint: {'center_x' : 0.5 ,'top' : 0.5}
+            on_release:
+                app.change_screen("establishment_list_window")
+
+        ColorTextInButton:
+            text:'melancholy sitting at home'
+            size_hint: 1, 0.1
+            pos_hint: {'center_x' : 0.5 ,'top' : 0.5}
+            opacity: 0.8
+            font_size: 30
+            on_release:
+                app.change_screen("between_subsections_recept_window")
+
+
+
+    BoxLayout:
+        size_hint: 0.2, 1
