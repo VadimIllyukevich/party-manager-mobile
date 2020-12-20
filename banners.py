@@ -27,7 +27,7 @@ class LikedUserEstablishmentBanner(GridLayout):
                            pos_hint={'top': 1, 'left': 1})
         left_label = LabelButton(text=str(kwargs['descriptions']), font_size=20, size_hint=(1, 0.2),
                                  pos_hint={'top': 0.2, 'left': 1},
-                                 on_press=lambda x: print(app.change_screen('establishment_page_window')),
+                                 on_press=lambda x: app.change_screen('establishment_page_window'),
                                  color=(0, 1, 0, 1), outline_color=(126 / 255, 5 / 255, 0 / 255, 1), outline_width=3)
         left.add_widget(left_image)
         left.add_widget(left_label)

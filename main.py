@@ -4,6 +4,7 @@ from kivy.lang import Builder
 from kivy.uix.behaviors import ButtonBehavior
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.gridlayout import GridLayout
 from kivy.uix.image import Image
 from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition, CardTransition
 from kivy.uix.label import Label
@@ -87,6 +88,10 @@ class ContainerForRegisterWindow(FloatLayout):
     pass
 
 
+class ContainerForPage(GridLayout):
+    pass
+
+
 class ContainerForBetweenSubsectionsReceptWindow(BoxLayout):
     pass
 
@@ -109,7 +114,7 @@ GUI = Builder.load_file("kivy.kv")
 
 class ManagerApp(App):
     id = 1
-
+    title = "PartyManager"
     def build(self):
         self.my_firebase = MyFirebase()
         return GUI
@@ -131,6 +136,9 @@ class ManagerApp(App):
         print(data)
         avatar_image = self.root.ids['user_window'].ids['avatar_image']
         avatar_image.source = "images/" + data['users']['1']['avatar']
+
+        streak_label = self.root.ids['establishment_page_window'].ids['streak_label']
+        streak_label.text = data['users']['1']['label']
 
         banner_grid_for_user = self.root.ids['user_window'].ids['banner_grid']
         liked_establishments_list = data['users']['1']['liked_establishment'][1:]
